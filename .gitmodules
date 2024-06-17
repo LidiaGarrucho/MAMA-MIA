@@ -1,0 +1,3 @@
+[submodule "nnUNet"]
+	path = nnUNet
+	url = https://github.com/LidiaGarrucho/nnUNet.git
