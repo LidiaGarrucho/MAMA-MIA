@@ -82,10 +82,10 @@ nnUNetv2_predict -i /path/to/your/images -o /path/to/output -d 101 -c 3d_fullres
 
 > Note: An error might arise if your images are not in compressed NifTI format (.nii.gz).
 
-## Citation
+## Citation and Attribution
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
 
-#### MAMA-MIA Dataset Citation
+#### MAMA-MIA Dataset
 > Placeholder for ArXiV paper citation
 
 
