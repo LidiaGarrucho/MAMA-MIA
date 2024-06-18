@@ -73,7 +73,7 @@ The recommended preprocessing steps to get optimum performance are:
 - **z-score normalization**. For DCE-MRI, use the mean and standard deviation of all the phases (from pre to last post-contrast) to z-score the DCE-MRI sequence.
 - **isotropic pixel spacing**. The MRIs were resampled using a uniform pixel spacing of [1,1,1].
 
-##### Step 5. Run the nnUNet inference:!
+##### Step 5. Run the nnUNet inference
 ````
 nnUNetv2_predict -i /path/to/your/images -o /path/to/output -d 101 -c 3d_fullres
 ````
