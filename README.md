@@ -1,11 +1,14 @@
+![Header](docs/_static/logo_header.png)
 # MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations
 [![arXiv](https://img.shields.io/badge/arXiv-XXXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXXXX) [![Synapse](https://img.shields.io/badge/Synapse-syn60868042-1258.svg)](https://doi.org/10.7303/syn60868042)
  
 Welcome to the **MAMA-MIA** dataset repository! This dataset contains **1,506** cases of **breast cancer** dynamic contrast-enhanced magnetic resonance images (**DCE-MRI**) with **expert tumor segmentations**. Below, you will find all the necessary information to download and use the dataset, as well as instructions on how to run inference using our pre-trained nnUNet model.
 
 ## Content
-
 ![Dataset Description](docs/_static/dataset_info.png)
+
+## Expert Segmentations
+![Expert Segmentation](docs/_static/segmentation_process.png)
 
 ## Downloading the Dataset
 The MAMA-MIA dataset is hosted on Synapse ([https://doi.org/10.7303/syn60868042](https://doi.org/10.7303/syn60868042)).
@@ -32,8 +35,8 @@ The pre-trained vanilla nnUNet model has been trained using the 1506 full-image 
 ##### Step 1. Clone the repository
 Clone the forked repository of nnUNet.
 ````
-git clone https://github.com/LidiaGarrucho/nnUNet
-cd nnUNet
+git clone https://github.com/LidiaGarrucho/MAMA-MIA
+cd MAMA-MIA/nnUNet
 ````
 
 ##### Step 2. Install the necessary dependencies
@@ -48,7 +51,7 @@ The recommended preprocessing steps to get optimum performance are:
 - **z-score normalization**. For DCE-MRI, use the mean and standard deviation of all the phases (from pre to last post-contrast) to z-score the DCE-MRI sequence.
 - **isotropic pixel spacing**. The MRIs were resampled using a uniform pixel spacing of [1,1,1].
 
-##### Step 5. Run the nnUNet inference:
+##### Step 5. Run the nnUNet inference:!
 ````
 nnUNetv2_predict -i /path/to/your/images -o /path/to/output -d 101 -c 3d_fullres
 ````
@@ -65,7 +68,7 @@ If you use the MAMA-MIA dataset or the pretrained model in your research, please
 
 BibTex entry:
 ````
-@article{osuala2023medigan,
+@article{lidia2024mamamia,
   title={},
   author={},
   journal={},
@@ -89,6 +92,8 @@ The MAMA-MIA dataset includes public DCE-MRI images from four different collecti
 
 #### Duke-Breast-Cancer-MRI (License [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/))
 > Saha, A., Harowicz, M. R., Grimm, L. J., Weng, J., Cain, E. H., Kim, C. E., Ghate, S. V., Walsh, R., & Mazurowski, M. A. (2021). Dynamic contrast-enhanced magnetic resonance images of breast cancer patients with tumor locations [Data set]. The Cancer Imaging Archive. [https://doi.org/10.7937/TCIA.e3sv-re93](https://doi.org/10.7937/TCIA.e3sv-re93)
+
+![Collaborators](docs/_static/collaborators.png)
 
 Thank you for using our dataset and pretrained model! If you have any questions or issues, please feel free to open an issue.
 
