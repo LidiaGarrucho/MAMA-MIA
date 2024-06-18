@@ -87,7 +87,16 @@ If you use the MAMA-MIA dataset or the pretrained model in your research, please
 
 #### MAMA-MIA Dataset
 > Placeholder for ArXiV paper citation
-
+##### BibTex:
+````
+@article{lidia2024mamamia,
+  title={},
+  author={},
+  journal={},
+  year={2024},
+  publisher={}
+}
+````
 
 The MAMA-MIA dataset includes public DCE-MRI images from four different collection in the TCIA repository under the following licenses:
 
