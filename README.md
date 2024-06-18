@@ -1,18 +1,22 @@
 ![Header](docs/_static/logo_header.png)
 # MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations
-[![arXiv](https://img.shields.io/badge/arXiv-XXXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXXXX) [![Synapse](https://img.shields.io/badge/Synapse-syn60868042-1258.svg)](https://doi.org/10.7303/syn60868042)
+[![arXiv](https://img.shields.io/badge/arXiv-XXXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXXXX) [![Synapse](https://img.shields.io/badge/Synapse-syn60868042-1258.svg)](https://doi.org/10.7303/syn60868042) [![License](https://img.shields.io/badge/License-CC--BY--NC--40-647.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
  
 Welcome to the **MAMA-MIA** dataset repository! This dataset contains **1,506** cases of **breast cancer** dynamic contrast-enhanced magnetic resonance images (**DCE-MRI**) with **expert tumor segmentations**. Below, you will find all the necessary information to download and use the dataset, as well as instructions on how to run inference using our pre-trained nnUNet model.
 
-## Content
-![Dataset Description](docs/_static/dataset_info.png)
-
-## Expert Segmentations
-![Expert Segmentation](docs/_static/segmentation_process.png)
+### Potential Applications
+Some of the potential applications of the dataser are:
+- Classification, Detection and Segmentation of Breast Cancer in MRI using Deep Learning.
+- Radiomic extraction and Machine Learning.
+- Segmentation Model Finetuning using the Pretrained nnUNet Weigths.
+- Fine-tuning of Foundational Models.
+- Treatment Response to Neoadjuvant Chemotherapy.
+- Patient Survival Prediction.
+- Segmentation Quality Control.
+- Image Synthesis.
 
 ## Downloading the Dataset
-The MAMA-MIA dataset is hosted on Synapse ([https://doi.org/10.7303/syn60868042](https://doi.org/10.7303/syn60868042)).
-You can download the dataset using the CLI or Python with the following code:
+The MAMA-MIA dataset is hosted on [Synapse]([https://doi.org/10.7303/syn60868042](https://doi.org/10.7303/syn60868042)). You can download the dataset using the CLI or Python with the following code:
 
 ##### Command Line Interface (CLI)
 ```bash
@@ -28,6 +32,12 @@ syn.login()
 entity = syn.get("syn60868042")
 ```
 > Check Synapse [documentation](https://help.synapse.org/docs/Downloading-Data-Programmatically.2003796248.html) for more info. 
+
+## Content
+![Dataset Description](docs/_static/dataset_info.png)
+
+## Expert Segmentations
+![Expert Segmentation](docs/_static/segmentation_process.png)
 
 ## Running Inference with nnUNet pre-trained model
 The pre-trained vanilla nnUNet model has been trained using the 1506 full-image DCE-MRIs and the expert segmentations from the MAMA-MIA dataset. 
@@ -60,10 +70,10 @@ nnUNetv2_predict -i /path/to/your/images -o /path/to/output -d 101 -c 3d_fullres
 
 > Note: An error might arise if your images are not in compressed NifTI format (.nii.gz).
 
-## Reference and License
+## Citation
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
 
-### MAMA-MIA Dataset Citation
+#### MAMA-MIA Dataset Citation
 > Placeholder for ArXiV paper citation
 
 BibTex entry:
@@ -95,5 +105,5 @@ The MAMA-MIA dataset includes public DCE-MRI images from four different collecti
 
 ![Collaborators](docs/_static/collaborators.png)
 
-Thank you for using our dataset and pretrained model! If you have any questions or issues, please feel free to open an issue.
+Thank you for using our dataset and pretrained model! If you have any questions or issues, please feel free to open an issue in this repository.
 
