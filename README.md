@@ -7,17 +7,17 @@ Welcome to the **MAMA-MIA** dataset repository! This dataset contains **1,506** 
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
 #### BibTex:
 ````
-@article{lidia2024mamamia,
-  title={},
-  author={},
-  journal={},
+@article{Garrucho2024MAMAMIA,
+  title={MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations},
+  author={Lidia Garrucho and Claire-Anne Reidel and Kaisar Kushibar and Smriti Joshi and Richard Osuala and Apostolia Tsirikoglou and Maciej Bobowicz and Javier del Riego and Alessandro Catanese and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Ritse Mann and Carlos Martín-Isla and Fred Prior and Kostas Marias and Martijn P.A. Starmans and Fredrik Strand and Oliver Díaz and Laura Igual and Karim Lekadir},
+  journal={arXiv preprint},
   year={2024},
-  publisher={}
+  note={DOI pending}
 }
 ````
 
 ### Potential Applications
-Some of the potential applications of the dataser are:
+Some of the potential applications of the dataset are:
 - Classification, Detection and Segmentation of Breast Cancer in MRI using Deep Learning.
 - Radiomic extraction and Machine Learning.
 - Segmentation Model Finetuning using the Pretrained nnUNet Weigths.
@@ -54,6 +54,19 @@ entity = syn.get("syn60868042")
 ## Running Inference with nnUNet pre-trained model
 The pre-trained vanilla nnUNet model has been trained using the 1506 full-image DCE-MRIs and the expert segmentations from the MAMA-MIA dataset. 
 
+| **Full-image Tumor Segmentation** | **Dice** | **IoU** | **HD95** | **MSD**  |
+|-------|---------:|--------:|---------:|---------:|
+| nnUNet Fold 1|  0.7267  |  0.6148 |  56.51   |  18.09   |
+| nnUNet Fold 2|  0.6837  |  0.5735 |  62.10   |  21.92   |
+| nnUNet Fold 3|  0.6992  |  0.5838 |  61.92   |  22.13   |
+| nnUNet Fold 4|  0.7230  |  0.6105 |  57.41   |  17.92   |
+| nnUNet Fold 5|  0.6826  |  0.5691 |  70.22   |  24.56   |
+| **nnUNet Mean** |  **0.7030**  |  **0.5903** |  **61.63**  |  **20.92**  |
+
+The metrics correspond to Dice Coefficient, Intersection over Union (IoU), the 95 Percentile of Hausdorff Distance (HD95) and to the Mean Surface Distance (MSD). The distances are in mm.
+The library used to compute these metrics was [seg-metrics v1.2.7](https://doi.org/10.5281/zenodo.12094185). 
+
+
 ##### Step 1. Clone the repository
 Clone the forked repository of nnUNet.
 ````
@@ -86,15 +99,16 @@ nnUNetv2_predict -i /path/to/your/images -o /path/to/output -d 101 -c 3d_fullres
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
 
 #### MAMA-MIA Dataset
-> Placeholder for ArXiV paper citation
+> Garrucho, L., Reidel, C.-A., Kushibar, K., Joshi, S., Osuala, R., Tsirikoglou, A., Bobowicz, M., del Riego, J., Catanese, A., Gwoździewicz, K., Cosaka, M.-L., Abo-Elhoda, P. M., Tantawy, S. W., Sakrana, S. S., Shawky-Abdelfatah, N. O., Abdo-Salem, A. M., Kozana, A., Divjak, E., Ivanac, G., Nikiforaki, K., Klontzas, M. E., García-Dosdá, R., Gulsun-Akpinar, M., Lafcı, O., Mann, R., Martín-Isla, C., Prior, F., Marias, K., Starmans, M. P. A., Strand, F., Díaz, O., Igual, L., and Lekadir, K. (2024). MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations. arXiv preprint (DOI pending).
+
 ##### BibTex:
 ````
-@article{lidia2024mamamia,
-  title={},
-  author={},
-  journal={},
+@article{Garrucho2024MAMAMIA,
+  title={MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations},
+  author={Lidia Garrucho and Claire-Anne Reidel and Kaisar Kushibar and Smriti Joshi and Richard Osuala and Apostolia Tsirikoglou and Maciej Bobowicz and Javier del Riego and Alessandro Catanese and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Ritse Mann and Carlos Martín-Isla and Fred Prior and Kostas Marias and Martijn P.A. Starmans and Fredrik Strand and Oliver Díaz and Laura Igual and Karim Lekadir},
+  journal={arXiv preprint},
   year={2024},
-  publisher={}
+  note={DOI pending}
 }
 ````
 
