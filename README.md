@@ -1,6 +1,6 @@
 ![Header](docs/_static/logo_header.png)
 # MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations
-[![arXiv](https://img.shields.io/badge/arXiv-XXXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXXXX) [![Synapse](https://img.shields.io/badge/Synapse-syn60868042-1258.svg)](https://doi.org/10.7303/syn60868042) [![License](https://img.shields.io/badge/License-CC--BY--NC--40-647.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![arXiv](https://img.shields.io/badge/arXiv-2406.13844-b31b1b.svg)](https://arxiv.org/abs/2406.13844) [![Synapse](https://img.shields.io/badge/Synapse-syn60868042-1258.svg)](https://doi.org/10.7303/syn60868042) [![License](https://img.shields.io/badge/License-CC--BY--NC--40-647.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
  
 Welcome to the **MAMA-MIA** dataset repository! This dataset contains **1,506** cases of **breast cancer** dynamic contrast-enhanced magnetic resonance images (**DCE-MRI**) with **expert tumor segmentations**. Below, you will find all the necessary information to download and use the dataset, as well as instructions on how to run inference using our pre-trained nnUNet model.
 
