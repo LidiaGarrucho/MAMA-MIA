@@ -12,7 +12,8 @@ If you use the MAMA-MIA dataset or the pretrained model in your research, please
   author={Lidia Garrucho and Claire-Anne Reidel and Kaisar Kushibar and Smriti Joshi and Richard Osuala and Apostolia Tsirikoglou and Maciej Bobowicz and Javier del Riego and Alessandro Catanese and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Ritse Mann and Carlos Martín-Isla and Fred Prior and Kostas Marias and Martijn P.A. Starmans and Fredrik Strand and Oliver Díaz and Laura Igual and Karim Lekadir},
   journal={arXiv preprint},
   year={2024},
-  note={DOI pending}
+  doi={arXiv:2406.13844},
+  url={https://arxiv.org/abs/2406.13844}
 }
 ````
 
@@ -99,7 +100,7 @@ nnUNetv2_predict -i /path/to/your/images -o /path/to/output -d 101 -c 3d_fullres
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
 
 #### MAMA-MIA Dataset
-> Garrucho, L., Reidel, C.-A., Kushibar, K., Joshi, S., Osuala, R., Tsirikoglou, A., Bobowicz, M., del Riego, J., Catanese, A., Gwoździewicz, K., Cosaka, M.-L., Abo-Elhoda, P. M., Tantawy, S. W., Sakrana, S. S., Shawky-Abdelfatah, N. O., Abdo-Salem, A. M., Kozana, A., Divjak, E., Ivanac, G., Nikiforaki, K., Klontzas, M. E., García-Dosdá, R., Gulsun-Akpinar, M., Lafcı, O., Mann, R., Martín-Isla, C., Prior, F., Marias, K., Starmans, M. P. A., Strand, F., Díaz, O., Igual, L., and Lekadir, K. (2024). MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations. arXiv preprint (DOI pending).
+> Garrucho, L., Reidel, C.-A., Kushibar, K., Joshi, S., Osuala, R., Tsirikoglou, A., Bobowicz, M., del Riego, J., Catanese, A., Gwoździewicz, K., Cosaka, M.-L., Abo-Elhoda, P. M., Tantawy, S. W., Sakrana, S. S., Shawky-Abdelfatah, N. O., Abdo-Salem, A. M., Kozana, A., Divjak, E., Ivanac, G., Nikiforaki, K., Klontzas, M. E., García-Dosdá, R., Gulsun-Akpinar, M., Lafcı, O., Mann, R., Martín-Isla, C., Prior, F., Marias, K., Starmans, M. P. A., Strand, F., Díaz, O., Igual, L., and Lekadir, K. (2024). MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations. arXiv preprint ([arXiv:2406.13844](https://arxiv.org/abs/2406.13844)).
 
 ##### BibTex:
 ````
@@ -108,7 +109,8 @@ If you use the MAMA-MIA dataset or the pretrained model in your research, please
   author={Lidia Garrucho and Claire-Anne Reidel and Kaisar Kushibar and Smriti Joshi and Richard Osuala and Apostolia Tsirikoglou and Maciej Bobowicz and Javier del Riego and Alessandro Catanese and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Ritse Mann and Carlos Martín-Isla and Fred Prior and Kostas Marias and Martijn P.A. Starmans and Fredrik Strand and Oliver Díaz and Laura Igual and Karim Lekadir},
   journal={arXiv preprint},
   year={2024},
-  note={DOI pending}
+  doi={arXiv:2406.13844},
+  url={https://arxiv.org/abs/2406.13844}
 }
 ````
 
