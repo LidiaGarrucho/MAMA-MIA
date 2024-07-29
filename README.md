@@ -57,12 +57,12 @@ The pre-trained vanilla nnUNet model has been trained using the 1506 full-image 
 
 | **Full-image Tumor Segmentation** | **Dice** | **IoU** | **HD95** | **MSD**  |
 |-------|---------:|--------:|---------:|---------:|
-| nnUNet Fold 1|  0.7267  |  0.6148 |  56.51   |  18.09   |
-| nnUNet Fold 2|  0.6837  |  0.5735 |  62.10   |  21.92   |
-| nnUNet Fold 3|  0.6992  |  0.5838 |  61.92   |  22.13   |
-| nnUNet Fold 4|  0.7230  |  0.6105 |  57.41   |  17.92   |
-| nnUNet Fold 5|  0.6826  |  0.5691 |  70.22   |  24.56   |
-| **nnUNet Mean** |  **0.7030**  |  **0.5903** |  **61.63**  |  **20.92**  |
+| nnUNet Fold 0|  0.7600  |  0.6512 |  39.90   |  11.89   |
+| nnUNet Fold 1|  0.7617  |  0.6500 |  41.25   |  12.10   |
+| nnUNet Fold 2|  0.7749  |  0.6714 |  31.12   |  8.86   |
+| nnUNet Fold 3|  0.7616  |  0.6577 |  36.25   |  11.74   |
+| nnUNet Fold 4|  0.7520  |  0.6396 |  38.57   |  10,81   |
+| **nnUNet Mean** |  **0.7620**  |  **0.6539** |  **37.41**  |  **11.08**  |
 
 The metrics correspond to Dice Coefficient, Intersection over Union (IoU), the 95 Percentile of Hausdorff Distance (HD95) and to the Mean Surface Distance (MSD). The distances are in mm.
 The library used to compute these metrics was [seg-metrics v1.2.7](https://doi.org/10.5281/zenodo.12094185). 
