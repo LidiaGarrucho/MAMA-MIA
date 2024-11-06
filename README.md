@@ -28,6 +28,22 @@ Some of the potential applications of the dataset are:
 - Segmentation Quality Control.
 - Image Synthesis.
 
+
+## Repository Structure
+````
+├── README.md                     # Project overview, setup instructions, and usage details
+├── requirements.txt              # List of Python package dependencies for running the project
+├── nnUNet                        # Forked nnUNet GitHub repository for training the automatic segmentation model
+├── notebooks                      # Jupyter Notebooks for project demos and examples
+│   ├── demo_preprocessing_pipeline.ipynb   # Demonstrates common MRI preprocessing steps (e.g., bias field correction, normalization, resampling)
+│   ├── display_clinical_data.ipynb         # Example on how to parse and visualize clinical data from the dataset
+│   └── display_segmentations.ipynb         # Various methods for displaying MRI images and their corresponding segmentation masks
+└── src                             # Python source code used in the Jupyter Notebooks
+    ├── clinical_data.py           # Functions for handling and processing clinical data
+    ├── preprocessing.py           # Preprocessing functions
+    └── visualization.py           # Functions for visualizing images, segmentations, and metrics
+````
+
 ## Downloading the Dataset
 The MAMA-MIA dataset is hosted on [Synapse]([https://doi.org/10.7303/syn60868042](https://doi.org/10.7303/syn60868042)). You can download the dataset using the CLI or Python with the following code:
 

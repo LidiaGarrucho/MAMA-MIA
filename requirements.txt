@@ -1,0 +1,8 @@
+pandas
+openpyxl
+matplotlib
+seaborn
+scikit-image
+SimpleITK
+jupyter
+jupyter_contrib_nbextensions
