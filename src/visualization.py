@@ -9,15 +9,6 @@ from ipywidgets import interact
 def get_segmentation_bounding_box(mask_sitk, margin=0, max_size=None, label=1):
     """
     Extracts the exact bounding box of a segmentation mask, with optional margins.
-
-    Parameters:
-        mask_sitk (sitk.Image): The SimpleITK image of the segmentation mask.
-        margin (int): Optional margin to add around the bounding box.
-        max_size (tuple): Optional maximum size (width, height, depth) to constrain the bounding box.
-        label (int): The label for which the bounding box is computed (default is 1).
-    
-    Returns:
-        list: [x_min, y_min, z_min, x_max, y_max, z_max] coordinates of the bounding box.
     """
     # Set full size to either max_size or the actual image size if max_size is not provided
     if max_size:
@@ -53,30 +44,34 @@ def get_segmentation_bounding_box(mask_sitk, margin=0, max_size=None, label=1):
     return bbox
 
 def plot_mri_and_segmentation(image_sitk, mask_sitk, patient_id, display_slices=None, bounding_box=None,
-                             color='red', marker='-', line_thickness=1):
+                             color='red', marker='-', line_thickness=1, resample=False):
     """Plots 2D views of an MRI image with segmentation contours and optional bounding box"""
     
     # Get image spacing and orientation
     input_scale = image_sitk.GetSpacing()
     orientation = get_image_orientation_from_direction(image_sitk)
 
-    # Resample both image and mask to isotropic spacing [1x1x1]
-    image_sitk = resample_sitk(image_sitk, new_spacing=[1, 1, 1], interpolator=sitk.sitkBSpline)
-    mask_sitk = resample_sitk(mask_sitk, new_spacing=[1, 1, 1], interpolator=sitk.sitkNearestNeighbor)
-    
-    # Convert images to NumPy arrays
-    image_array = sitk.GetArrayFromImage(image_sitk)
-    mask_array = sitk.GetArrayFromImage(sitk.Cast(mask_sitk, sitk.sitkFloat32))
-
-    # Define slice locations for display
-    size_x, size_y, size_z = image_array.shape
+        # Define slice locations for display
     if display_slices is None:
-        display_slices = [size_z // 2, size_y // 2, size_x // 2]
-    else:
+        # Default to the middle slice along each axis of the bounding box containing the mask
+        if bounding_box is not None:
+            x_min, y_min, z_min, x_max, y_max, z_max = bounding_box
+        else:
+            x_min, y_min, z_min, x_max, y_max, z_max = get_segmentation_bounding_box(mask_sitk)
+        display_slices = [(x_min + x_max) // 2, (y_min + y_max) // 2, (z_min + z_max) // 2]
+
+    if resample:
+        # Resample both image and mask to isotropic spacing [1x1x1]
+        image_sitk = resample_sitk(image_sitk, new_spacing=[1, 1, 1], interpolator=sitk.sitkBSpline)
+        mask_sitk = resample_sitk(mask_sitk, new_spacing=[1, 1, 1], interpolator=sitk.sitkNearestNeighbor)
         # Adjust display slices according to original spacing
         display_slices = [int(display_slices[0] * input_scale[0]), 
                           int(display_slices[1] * input_scale[1]), 
                           int(display_slices[2] * input_scale[2])]
+
+    # Convert images to NumPy arrays
+    image_array = sitk.GetArrayFromImage(image_sitk)
+    mask_array = sitk.GetArrayFromImage(sitk.Cast(mask_sitk, sitk.sitkFloat32))
 
     # Extract 2D slices for each view
     slice_xy = image_array[:, :, display_slices[0]]
@@ -112,10 +107,11 @@ def plot_mri_and_segmentation(image_sitk, mask_sitk, patient_id, display_slices=
     # Plot bounding box if provided
     if bounding_box is not None:
         x_min, y_min, z_min, x_max, y_max, z_max = bounding_box
-        # Rescale the bounding box to the new spacing
-        x_min, x_max = int(x_min * input_scale[0]), int(x_max * input_scale[0])
-        y_min, y_max = int(y_min * input_scale[1]), int(y_max * input_scale[1])
-        z_min, z_max = int(z_min * input_scale[2]), int(z_max * input_scale[2])
+        if resample:
+            # Rescale the bounding box to the new spacing
+            x_min, x_max = int(x_min * input_scale[0] + 0.5), int(x_max * input_scale[0] + 0.5)
+            y_min, y_max = int(y_min * input_scale[1] + 0.5), int(y_max * input_scale[1] + 0.5)
+            z_min, z_max = int(z_min * input_scale[2] + 0.5), int(z_max * input_scale[2] + 0.5)
         # Define bounding box for each 2D view
         rect_xy = patches.Rectangle((x_min, y_min), x_max - x_min, y_max - y_min, linewidth=1, edgecolor='g', facecolor='none')
         rect_xz = patches.Rectangle((x_min, z_min), x_max - x_min, z_max - z_min, linewidth=1, edgecolor='g', facecolor='none')
@@ -148,6 +144,93 @@ def plot_3d_segmentation(mask_sitk):
     ax.voxels(mask_array, facecolors=color_list[0], edgecolor='k')
     plt.tight_layout()
     plt.show()
+
+def plot_mri_preprocessing(image_sitk, preprocessed_image_sitk, patient_id,
+                                  preprocessing_method='', figsize=(12, 8), display_slices=None):
+    """
+    Displays a plot of MRI slices across all three planes before and after preprocessing.
+    
+    Parameters:
+        image_sitk (SimpleITK.Image): Original MRI image.
+        preprocessed_image_sitk (SimpleITK.Image): Preprocessed MRI image.
+        patient_id (str): Identifier for the patient.
+        preprocessing_method (str): Description of the preprocessing method applied.
+        figsize (tuple): Size of the figure.
+        display_slices (tuple, optional): Indices for the slices to display for each plane (axial, sagittal, coronal).
+    """
+    
+    orientation = get_image_orientation_from_direction(image_sitk)
+    
+    # Convert SimpleITK images to NumPy arrays
+    image_np = sitk.GetArrayFromImage(image_sitk)
+    preprocessed_image_np = sitk.GetArrayFromImage(preprocessed_image_sitk)
+    
+    # Get image dimensions (after preprocessing)
+    z_max, y_max, x_max = preprocessed_image_np.shape
+    original_z_max, original_y_max, original_x_max = image_np.shape
+    
+    # Use the minimum size to avoid out-of-range errors
+    z_max = min(z_max, original_z_max)
+    y_max = min(y_max, original_y_max)
+    x_max = min(x_max, original_x_max)
+
+    # If display_slices is not provided, use the middle slice for each axis
+    if display_slices is None:
+        display_slices = (z_max // 2, y_max // 2, x_max // 2)
+
+    # Function to plot slices in all three planes based on orientation
+    def plot_slices(slicer_1, slicer_2, slicer_3):
+        fig, axes = plt.subplots(2, 3, figsize=figsize)
+        fig.suptitle(f"Patient ID: {patient_id} - {preprocessing_method}", fontsize=14)
+
+        # Define slice views for each plane before preprocessing, adjusting slices based on orientation
+        if orientation == 'LAI':
+            # 'LAI' orientation (axial, coronal, sagittal)
+            views_before = [
+                image_np[slicer_1, :, :],      # Axial
+                image_np[:, :, slicer_2],    # Sagittal
+                image_np[:, slicer_3, :]    # Coronal
+            ]
+            views_after = [
+                preprocessed_image_np[slicer_1, :, :],      # Axial
+                preprocessed_image_np[:, :, slicer_2],    # Sagittal
+                preprocessed_image_np[:, slicer_3, :]    # Coronal
+            ]
+            plane_titles = ["Axial", "Sagittal", "Coronal"]
+        else:
+            # Default orientation (sagittal, axial, coronal)
+            views_before = [
+                image_np[slicer_1, :, :],     # Axial
+                image_np[:, slicer_2, :],  # Sagittal
+                image_np[:, :, slicer_3]    # Coronal
+            ]
+            views_after = [
+                preprocessed_image_np[slicer_1, :, :],     # Axial
+                preprocessed_image_np[:, slicer_2, :],  # Sagittal
+                preprocessed_image_np[:, :, slicer_3]    # Coronal
+            ]
+            plane_titles = ["Sagittal", "Axial", "Coronal"]
+
+        # Plot each view before preprocessing
+        for i, (view, title) in enumerate(zip(views_before, plane_titles)):
+            axes[0, i].imshow(view, cmap='gray', interpolation='none')
+            axes[0, i].set_title(f'Before - {title}', fontsize=10)
+            axes[0, i].axis('off')
+            axes[0, i].invert_yaxis()
+
+        # Plot each view after preprocessing
+        for i, (view, title) in enumerate(zip(views_after, plane_titles)):
+            axes[1, i].imshow(view, cmap='gray', interpolation='none')
+            axes[1, i].set_title(f'After - {title}', fontsize=10)
+            axes[1, i].axis('off')
+            axes[1, i].invert_yaxis()
+
+        plt.tight_layout()
+        plt.show()
+
+    # Use the provided display_slices or default to the middle of each axis
+    slicer_1, slicer_2, slicer_3 = display_slices
+    plot_slices(slicer_1, slicer_2, slicer_3)
 
 def interactive_plot_mri_preprocessing(image_sitk, preprocessed_image_sitk, patient_id,
                                        preprocessing_method='', figsize=(12, 8)):
@@ -240,7 +323,7 @@ def interactive_plot_mri_preprocessing(image_sitk, preprocessed_image_sitk, pati
                  slicer_1=widgets.IntSlider(min=0, max=z_max - 1, step=1, value=z_max // 2),
                  slicer_3=widgets.IntSlider(min=0, max=x_max - 1, step=1, value=x_max // 2))
 
-def interactive_plot_mri_and_segmentation(image_sitk, mask_sitk, patient_id,
+def interactive_plot_mri_and_segmentation(image_sitk, mask_sitk, patient_id, resample=False,
                                           color='red', marker='-', line_thickness=1, figsize=(15, 5)):
     """
     Displays interactive 2D slices of an MRI image with segmentation contours.
@@ -254,9 +337,10 @@ def interactive_plot_mri_and_segmentation(image_sitk, mask_sitk, patient_id,
         line_thickness (int, optional): Thickness of contour lines.
         figsize (tuple, optional): Size of the figure for the plot.
     """
-    # # Resample both image and mask to isotropic spacing [1x1x1]
-    # image_sitk = resample_sitk(image_sitk, new_spacing=[1, 1, 1], interpolator=sitk.sitkBSpline)
-    # mask_sitk = resample_sitk(mask_sitk, new_spacing=[1, 1, 1], interpolator=sitk.sitkNearestNeighbor)
+    if resample:
+        # Resample both image and mask to isotropic spacing [1x1x1]
+        image_sitk = resample_sitk(image_sitk, new_spacing=[1, 1, 1], interpolator=sitk.sitkBSpline)
+        mask_sitk = resample_sitk(mask_sitk, new_spacing=[1, 1, 1], interpolator=sitk.sitkNearestNeighbor)
 
     # Convert SimpleITK images to NumPy arrays
     image_array = sitk.GetArrayFromImage(image_sitk)
@@ -337,6 +421,7 @@ def interactive_plot_mri_and_segmentation(image_sitk, mask_sitk, patient_id,
 
         fig.tight_layout()
         plt.show()
+        plt.close(fig)
 
     # Create interactive sliders for axial, sagittal, and coronal slices
     if orientation == 'LAI':
