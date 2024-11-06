@@ -4,3 +4,5 @@ matplotlib
 seaborn
 SimpleITK
 scikit-image
+jupyter
+notebook
