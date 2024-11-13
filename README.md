@@ -45,7 +45,7 @@ Some of the potential applications of the dataset are:
 ````
 
 ## Downloading the Dataset
-The MAMA-MIA dataset is hosted on [Synapse]([https://doi.org/10.7303/syn60868042](https://doi.org/10.7303/syn60868042)). You can download the dataset using the CLI or Python with the following code:
+The MAMA-MIA dataset is hosted on [Synapse](https://doi.org/10.7303/syn60868042). You can download the dataset using the CLI or Python with the following code:
 
 ##### Command Line Interface (CLI)
 ```bash
