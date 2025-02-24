@@ -1,5 +1,5 @@
 ![Header](docs/_static/logo_header.png)
-# MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations
+# MAMA-MIA: A large-scale multicenter breast cancer DCE-MRI benchmark dataset with expert segmentations
 [![arXiv](https://img.shields.io/badge/arXiv-2406.13844-b31b1b.svg)](https://arxiv.org/abs/2406.13844) [![Synapse](https://img.shields.io/badge/Synapse-syn60868042-1258.svg)](https://doi.org/10.7303/syn60868042) [![License](https://img.shields.io/badge/License-CC--BY--NC--40-647.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
  
 Welcome to the **MAMA-MIA** dataset repository! This dataset contains **1,506** cases of **breast cancer** dynamic contrast-enhanced magnetic resonance images (**DCE-MRI**) with **expert tumor segmentations**. Below, you will find all the necessary information to download and use the dataset, as well as instructions on how to run inference using our pre-trained nnUNet model.
@@ -8,8 +8,8 @@ If you use the MAMA-MIA dataset or the pretrained model in your research, please
 #### BibTex:
 ````
 @article{Garrucho2024MAMAMIA,
-  title={MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations},
-  author={Lidia Garrucho and Claire-Anne Reidel and Kaisar Kushibar and Smriti Joshi and Richard Osuala and Apostolia Tsirikoglou and Maciej Bobowicz and Javier del Riego and Alessandro Catanese and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Ritse Mann and Carlos Martín-Isla and Fred Prior and Kostas Marias and Martijn P.A. Starmans and Fredrik Strand and Oliver Díaz and Laura Igual and Karim Lekadir},
+  title={A large-scale multicenter breast cancer DCE-MRI benchmark dataset with expert segmentations},
+  author={Lidia Garrucho and Kaisar Kushibar and Claire-Anne Reidel and Smriti Joshi and Richard Osuala and Apostolia Tsirikoglou and Maciej Bobowicz and Javier del Riego and Alessandro Catanese and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Ritse Mann and Carlos Martín-Isla and Fred Prior and Kostas Marias and Martijn P.A. Starmans and Fredrik Strand and Oliver Díaz and Laura Igual and Karim Lekadir},
   journal={arXiv preprint},
   year={2024},
   doi={arXiv:2406.13844},
