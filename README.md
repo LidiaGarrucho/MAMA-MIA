@@ -1,19 +1,21 @@
 ![Header](docs/_static/logo_header.png)
 # MAMA-MIA: A large-scale multicenter breast cancer DCE-MRI benchmark dataset with expert segmentations
-[![arXiv](https://img.shields.io/badge/arXiv-2406.13844-b31b1b.svg)](https://arxiv.org/abs/2406.13844) [![Synapse](https://img.shields.io/badge/Synapse-syn60868042-1258.svg)](https://doi.org/10.7303/syn60868042) [![License](https://img.shields.io/badge/License-CC--BY--NC--40-647.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![arXiv](https://img.shields.io/badge/Sci._Data_Paper-Link-b31b1b.svg)](https://doi.org/10.1038/s41597-025-04707-4) [![Synapse](https://img.shields.io/badge/Synapse-syn60868042-1258.svg)](https://doi.org/10.7303/syn60868042) [![License](https://img.shields.io/badge/License-CC--BY--NC--40-647.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
  
 Welcome to the **MAMA-MIA** dataset repository! This dataset contains **1,506** cases of **breast cancer** dynamic contrast-enhanced magnetic resonance images (**DCE-MRI**) with **expert tumor segmentations**. Below, you will find all the necessary information to download and use the dataset, as well as instructions on how to run inference using our pre-trained nnUNet model.
 
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
 #### BibTex:
 ````
-@article{Garrucho2024MAMAMIA,
+@article{garrucho2025,
   title={A large-scale multicenter breast cancer DCE-MRI benchmark dataset with expert segmentations},
-  author={Lidia Garrucho and Kaisar Kushibar and Claire-Anne Reidel and Smriti Joshi and Richard Osuala and Apostolia Tsirikoglou and Maciej Bobowicz and Javier del Riego and Alessandro Catanese and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Ritse Mann and Carlos Martín-Isla and Fred Prior and Kostas Marias and Martijn P.A. Starmans and Fredrik Strand and Oliver Díaz and Laura Igual and Karim Lekadir},
-  journal={arXiv preprint},
-  year={2024},
-  doi={arXiv:2406.13844},
-  url={https://arxiv.org/abs/2406.13844}
+  author={Garrucho, Lidia and Kushibar, Kaisar and Reidel, Claire-Anne and Joshi, Smriti and Osuala, Richard and Tsirikoglou, Apostolia and Bobowicz, Maciej and Riego, Javier del and Catanese, Alessandro and Gwoździewicz, Katarzyna and Cosaka, Maria-Laura and Abo-Elhoda, Pasant M and Tantawy, Sara W and Sakrana, Shorouq S and Shawky-Abdelfatah, Norhan O and Salem, Amr Muhammad Abdo and Kozana, Androniki and Divjak, Eugen and Ivanac, Gordana and Nikiforaki, Katerina and Klontzas, Michail E and García-Dosdá, Rosa and Gulsun-Akpinar, Meltem and Lafcı, Oğuz and Mann, Ritse and Martín-Isla, Carlos and Prior, Fred and Marias, Kostas and Starmans, Martijn P A and Strand, Fredrik and Díaz, Oliver and Igual, Laura and Lekadir, Karim},
+  journal = {Scientific Data},
+  year = {2025},
+  doi = {10.1038/s41597-025-04707-4},
+  pages = {453},
+  number = {1},
+  volume = {12}
 }
 ````
 
@@ -116,17 +118,19 @@ nnUNetv2_predict -i /path/to/your/images -o /path/to/output -d 101 -c 3d_fullres
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
 
 #### MAMA-MIA Dataset
-> Garrucho, L., Reidel, C.-A., Kushibar, K., Joshi, S., Osuala, R., Tsirikoglou, A., Bobowicz, M., del Riego, J., Catanese, A., Gwoździewicz, K., Cosaka, M.-L., Abo-Elhoda, P. M., Tantawy, S. W., Sakrana, S. S., Shawky-Abdelfatah, N. O., Abdo-Salem, A. M., Kozana, A., Divjak, E., Ivanac, G., Nikiforaki, K., Klontzas, M. E., García-Dosdá, R., Gulsun-Akpinar, M., Lafcı, O., Mann, R., Martín-Isla, C., Prior, F., Marias, K., Starmans, M. P. A., Strand, F., Díaz, O., Igual, L., and Lekadir, K. (2024). MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations. arXiv preprint ([arXiv:2406.13844](https://arxiv.org/abs/2406.13844)).
+> Garrucho, L., Kushibar, K., Reidel, CA. et al. A large-scale multicenter breast cancer DCE-MRI benchmark dataset with expert segmentations. Sci Data 12, 453 (2025) ([10.1038/s41597-025-04707-4](https://doi.org/10.1038/s41597-025-04707-4)).
 
 ##### BibTex:
 ````
-@article{Garrucho2024MAMAMIA,
-  title={MAMA-MIA: A Large-Scale Multi-Center Breast Cancer DCE-MRI Benchmark Dataset with Expert Segmentations},
-  author={Lidia Garrucho and Claire-Anne Reidel and Kaisar Kushibar and Smriti Joshi and Richard Osuala and Apostolia Tsirikoglou and Maciej Bobowicz and Javier del Riego and Alessandro Catanese and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Ritse Mann and Carlos Martín-Isla and Fred Prior and Kostas Marias and Martijn P.A. Starmans and Fredrik Strand and Oliver Díaz and Laura Igual and Karim Lekadir},
-  journal={arXiv preprint},
-  year={2024},
-  doi={arXiv:2406.13844},
-  url={https://arxiv.org/abs/2406.13844}
+@article{garrucho2025,
+  title={A large-scale multicenter breast cancer DCE-MRI benchmark dataset with expert segmentations},
+  author={Garrucho, Lidia and Kushibar, Kaisar and Reidel, Claire-Anne and Joshi, Smriti and Osuala, Richard and Tsirikoglou, Apostolia and Bobowicz, Maciej and Riego, Javier del and Catanese, Alessandro and Gwoździewicz, Katarzyna and Cosaka, Maria-Laura and Abo-Elhoda, Pasant M and Tantawy, Sara W and Sakrana, Shorouq S and Shawky-Abdelfatah, Norhan O and Salem, Amr Muhammad Abdo and Kozana, Androniki and Divjak, Eugen and Ivanac, Gordana and Nikiforaki, Katerina and Klontzas, Michail E and García-Dosdá, Rosa and Gulsun-Akpinar, Meltem and Lafcı, Oğuz and Mann, Ritse and Martín-Isla, Carlos and Prior, Fred and Marias, Kostas and Starmans, Martijn P A and Strand, Fredrik and Díaz, Oliver and Igual, Laura and Lekadir, Karim},
+  journal = {Scientific Data},
+  year = {2025},
+  doi = {10.1038/s41597-025-04707-4},
+  pages = {453},
+  number = {1},
+  volume = {12}
 }
 ````
 
