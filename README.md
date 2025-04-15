@@ -49,9 +49,13 @@ Some of the potential applications of the dataset are:
 ## Downloading the Dataset
 The MAMA-MIA dataset is hosted on [Synapse](https://doi.org/10.7303/syn60868042). You can download the dataset using the CLI or Python with the following code:
 
+Log in using a Personal Access Token (recommended):
+- Create a [Personal Access Token](https://www.synapse.org/#!PersonalAccessTokens:)
+
 ##### Command Line Interface (CLI)
 ```bash
-synapse get syn60868042
+ synapse login --authToken <YOUR_TOKEN_HERE>
+ synapse get -r syn60868042
 ```
 
 ##### Python
@@ -59,7 +63,7 @@ synapse get syn60868042
 ```bash
 import synapseclient
 syn = synapseclient.Synapse()
-syn.login()
+syn.login(authToken="YOUR_TOKEN_HERE")  # or syn.login('username', 'password')
 entity = syn.get("syn60868042")
 ```
 > Check Synapse [documentation](https://help.synapse.org/docs/Downloading-Data-Programmatically.2003796248.html) for more info. 
