@@ -4,6 +4,15 @@
  
 Welcome to the **MAMA-MIA** dataset repository! This dataset contains **1,506** cases of **breast cancer** dynamic contrast-enhanced magnetic resonance images (**DCE-MRI**) with **expert tumor segmentations**. Below, you will find all the necessary information to download and use the dataset, as well as instructions on how to run inference using our pre-trained nnUNet model.
 
+## 📢 Join the MAMA-MIA Challenge!
+
+Are you working with breast cancer DCE-MRI data? Put your algorithms to the test in the **MAMA-MIA Challenge** – an international competition on **tumour segmentation** and **treatment response prediction**!
+
+🔬 **2 Tasks** · 🧠 **Real-world data** · 🏆 **Evaluation on private multicenter datasets**
+
+🚀 Submit your models before **July 31st, 2025**  
+🔗 [Participate now on Codabench](https://www.codabench.org/competitions/7425/)
+
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
 #### BibTex:
 ````
