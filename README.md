@@ -30,6 +30,17 @@ If you use the MAMA-MIA dataset or the pretrained model in your research, please
   number = {1},
   volume = {12}
 }
+
+@misc{garrucho2026,
+      title={The MAMA-MIA Challenge: Advancing Generalizability and Fairness in Breast MRI Tumor Segmentation and Treatment Response Prediction}, 
+      author={Lidia Garrucho and Smriti Joshi and Kaisar Kushibar and Richard Osuala and Maciej Bobowicz and Xavier Bargalló and Paulius Jaruševičius and Kai Geissler and Raphael Schäfer and Muhammad Alberb and Tony Xu and Anne Martel and Daniel Sleiman and Navchetan Awasthi and Hadeel Awwad and Joan C. Vilanova and Robert Martí and Daan Schouten and Jeong Hoon Lee and Mirabela Rusu and Eleonora Poeta and Luisa Vargas and Eliana Pastor and Maria A. Zuluaga and Jessica Kächele and Dimitrios Bounias and Alexandra Ertl and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Carlos Martín-Isla and Oliver Díaz and Laura Igual and Karim Lekadir},
+      year={2026},
+      eprint={2603.01250},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.01250}, 
+}
+
 ````
 
 ### Potential Applications
