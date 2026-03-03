@@ -13,7 +13,8 @@ Are you working with breast cancer DCE-MRI data? Put your algorithms to the test
 🚀 Submit your models to Codabench 
 🔗 [Participate now on Codabench](https://www.codabench.org/competitions/7425/)
 
-The **MAMA-MIA Challenge** paper is now available on arXiv: 🔗 [https://arxiv.org/abs/2603.01250](https://arxiv.org/abs/2603.01250) 
+The **MAMA-MIA Challenge** paper is now available on arXiv: 🔗 [https://arxiv.org/abs/2603.01250](https://arxiv.org/abs/2603.01250)
+
 If you participate in the challenge or use its framework, please cite the arXiv paper.
 
 If you use the MAMA-MIA dataset or the pretrained model in your research, please cite our publication and the dataset publications of the images included in the dataset.
