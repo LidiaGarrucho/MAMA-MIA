@@ -92,6 +92,14 @@ entity = syn.get("syn60868042")
 ```
 > Check Synapse [documentation](https://help.synapse.org/docs/Downloading-Data-Programmatically.2003796248.html) for more info. 
 
+### Alternative Download (XNAT)
+
+If you are unable to access Synapse due to regional or institutional restrictions, the dataset is also available through the **Health-RI XNAT** platform:
+
+[Download MAMA-MIA dataset from XNAT](https://xnat.health-ri.nl/app/action/DisplayItemAction/search_value/mama_mia/search_element/xnat:projectData/search_field/xnat:projectData.ID)
+
+You will might to create an XNAT account (if you do not already have one) to access to the **MAMA-MIA** project before downloading the data.
+
 ## Content
 ![Dataset Description](docs/_static/dataset_info.png)
 
