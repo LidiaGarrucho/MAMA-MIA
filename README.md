@@ -13,7 +13,7 @@ Are you working with breast cancer DCE-MRI data? Put your algorithms to the test
 🚀 Submit your models to Codabench 
 🔗 [Participate now on Codabench](https://www.codabench.org/competitions/7425/)
 
-The **MAMA-MIA Challenge** paper is now available on arXiv: 🔗 [https://arxiv.org/abs/2603.01250](https://arxiv.org/abs/2603.01250)
+The **MAMA-MIA Challenge** paper is now available on IEEE Transactions on Medical Imaging: 🔗 [https://ieeexplore.ieee.org/document/11690473](https://ieeexplore.ieee.org/document/11690473)
 
 If you participate in the challenge or use its framework, please cite the arXiv paper.
 
@@ -31,16 +31,15 @@ If you use the MAMA-MIA dataset or the pretrained model in your research, please
   volume = {12}
 }
 
-@misc{garrucho2026,
-      title={The MAMA-MIA Challenge: Advancing Generalizability and Fairness in Breast MRI Tumor Segmentation and Treatment Response Prediction}, 
-      author={Lidia Garrucho and Smriti Joshi and Kaisar Kushibar and Richard Osuala and Maciej Bobowicz and Xavier Bargalló and Paulius Jaruševičius and Kai Geissler and Raphael Schäfer and Muhammad Alberb and Tony Xu and Anne Martel and Daniel Sleiman and Navchetan Awasthi and Hadeel Awwad and Joan C. Vilanova and Robert Martí and Daan Schouten and Jeong Hoon Lee and Mirabela Rusu and Eleonora Poeta and Luisa Vargas and Eliana Pastor and Maria A. Zuluaga and Jessica Kächele and Dimitrios Bounias and Alexandra Ertl and Katarzyna Gwoździewicz and Maria-Laura Cosaka and Pasant M. Abo-Elhoda and Sara W. Tantawy and Shorouq S. Sakrana and Norhan O. Shawky-Abdelfatah and Amr Muhammad Abdo-Salem and Androniki Kozana and Eugen Divjak and Gordana Ivanac and Katerina Nikiforaki and Michail E. Klontzas and Rosa García-Dosdá and Meltem Gulsun-Akpinar and Oğuz Lafcı and Carlos Martín-Isla and Oliver Díaz and Laura Igual and Karim Lekadir},
-      year={2026},
-      eprint={2603.01250},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2603.01250}, 
-}
-
+@article{mamamiachallenge,
+  author={Garrucho, Lidia and Joshi, Smriti and Kushibar, Kaisar and Osuala, Richard and Bobowicz, Maciej and Bargalló, Xavier and Jaruševičius, Paulius and Geissler, Kai and Schäfer, Raphael and Alberb, Muhammad and Xu, Tony and Martel, Anne and Sleiman, Daniel and Awasthi, Navchetan and Awwad, Hadeel and Vilanova, Joan C. and Martí, Robert and Schouten, Daan and Lee, Jeong Hoon and Rusu, Mirabela and Poeta, Eleonora and Vargas, Luisa and Pastor, Eliana and Zuluaga, Maria A. and Kächele, Jessica and Bounias, Dimitrios and Ertl, Alexandra and Gwoździewicz, Katarzyna and Cosaka, Maria-Laura and Abo-Elhoda, Pasant M. and Tantawy, Sara W. and Sakrana, Shorouq S. and Shawky-Abdelfatah, Norhan O. and Abdo-Salem, Amr Muhammad and Kozana, Androniki and Divjak, Eugen and Ivanac, Gordana and Nikiforaki, Katerina and Klontzas, Michail E. and García-Dosdá, Rosa and Gulsun-Akpinar, Meltem and Lafcı, Oğuz and Martín-Isla, Carlos and Díaz, Oliver and Igual, Laura and Lekadir, Karim},
+  journal={IEEE Transactions on Medical Imaging}, 
+  title={The MAMA-MIA Challenge: Advancing Generalizability and Fairness in Breast MRI Tumor Segmentation and Treatment Response Prediction}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TMI.2026.3733343}}
 ````
 
 ### Potential Applications
@@ -158,16 +157,15 @@ If you use the MAMA-MIA dataset or the pretrained model in your research, please
 
 ##### BibTex:
 ````
-@article{garrucho2025,
-  title={A large-scale multicenter breast cancer DCE-MRI benchmark dataset with expert segmentations},
-  author={Garrucho, Lidia and Kushibar, Kaisar and Reidel, Claire-Anne and Joshi, Smriti and Osuala, Richard and Tsirikoglou, Apostolia and Bobowicz, Maciej and Riego, Javier del and Catanese, Alessandro and Gwoździewicz, Katarzyna and Cosaka, Maria-Laura and Abo-Elhoda, Pasant M and Tantawy, Sara W and Sakrana, Shorouq S and Shawky-Abdelfatah, Norhan O and Salem, Amr Muhammad Abdo and Kozana, Androniki and Divjak, Eugen and Ivanac, Gordana and Nikiforaki, Katerina and Klontzas, Michail E and García-Dosdá, Rosa and Gulsun-Akpinar, Meltem and Lafcı, Oğuz and Mann, Ritse and Martín-Isla, Carlos and Prior, Fred and Marias, Kostas and Starmans, Martijn P A and Strand, Fredrik and Díaz, Oliver and Igual, Laura and Lekadir, Karim},
-  journal = {Scientific Data},
-  year = {2025},
-  doi = {10.1038/s41597-025-04707-4},
-  pages = {453},
-  number = {1},
-  volume = {12}
-}
+@ARTICLE{mamamiachallenge,
+  author={Garrucho, Lidia and Joshi, Smriti and Kushibar, Kaisar and Osuala, Richard and Bobowicz, Maciej and Bargalló, Xavier and Jaruševičius, Paulius and Geissler, Kai and Schäfer, Raphael and Alberb, Muhammad and Xu, Tony and Martel, Anne and Sleiman, Daniel and Awasthi, Navchetan and Awwad, Hadeel and Vilanova, Joan C. and Martí, Robert and Schouten, Daan and Lee, Jeong Hoon and Rusu, Mirabela and Poeta, Eleonora and Vargas, Luisa and Pastor, Eliana and Zuluaga, Maria A. and Kächele, Jessica and Bounias, Dimitrios and Ertl, Alexandra and Gwoździewicz, Katarzyna and Cosaka, Maria-Laura and Abo-Elhoda, Pasant M. and Tantawy, Sara W. and Sakrana, Shorouq S. and Shawky-Abdelfatah, Norhan O. and Abdo-Salem, Amr Muhammad and Kozana, Androniki and Divjak, Eugen and Ivanac, Gordana and Nikiforaki, Katerina and Klontzas, Michail E. and García-Dosdá, Rosa and Gulsun-Akpinar, Meltem and Lafcı, Oğuz and Martín-Isla, Carlos and Díaz, Oliver and Igual, Laura and Lekadir, Karim},
+  journal={IEEE Transactions on Medical Imaging}, 
+  title={The MAMA-MIA Challenge: Advancing Generalizability and Fairness in Breast MRI Tumor Segmentation and Treatment Response Prediction}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TMI.2026.3733343}}
 ````
 
 The MAMA-MIA dataset includes public DCE-MRI images from four different collection in the TCIA repository under the following licenses:
